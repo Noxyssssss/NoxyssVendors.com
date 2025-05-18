@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Noxys Vendors - AirPods Pro 2</title>
+<style>
+  body {
+    background: #121212;
+    color: #eee;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    user-select: none;
+    perspective: 800px;
+    overflow-x: hidden;
+    margin: 0;
+    position: relative;
+  }
+
+  /* Background bubbles */
+  .bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(76, 209, 55, 0.15);
+    box-shadow: 0 0 15px 2px rgba(76, 209, 55, 0.3);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  .bubble1 { width: 140px; height: 140px; left: 10%; top: 30%; animation: floatUp 18s infinite; }
+  .bubble2 { width: 100px; height: 100px; left: 80%; top: 70%; animation: floatUp 20s infinite; animation-delay: 6s; }
+  .bubble3 { width: 80px; height: 80px; left: 50%; top: 85%; animation: floatUp 15s infinite; animation-delay: 10s; }
+
+  @keyframes floatUp {
+    0% { transform: translateY(100vh); opacity: 0; }
+    10% { opacity: 1; }
+    100% { transform: translateY(-150vh); opacity: 0; }
+  }
+
+  /* 3D animated rotating logos */
+  .rotating-logos-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 40px;
+    z-index: 1000;
+  }
+
+  .rotating-logo {
+    width: 80px;
+    height: 80px;
+    transform-style: preserve-3d;
+    animation: rotate3D 6s linear infinite;
+  }
+  .rotating-logo:nth-child(2) { animation-delay: 1.5s; }
+  .rotating-logo:nth-child(3) { animation-delay: 3s; }
+
+  @keyframes rotate3D {
+    0% { transform: rotateX(0deg) rotateY(0deg); }
+    100% { transform: rotateX(360deg) rotateY(360deg); }
+  }
+
+  header {
+    background: #1f1f1f;
+    padding: 80px 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 10px rgba(0,0,0,0.7);
+    position: relative;
+    z-index: 500;
+  }
+
+  .logo-text {
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: 0.15em;
+    font-family: 'Courier New', monospace;
+    color: #fff;
+    animation: logoFloat 4s ease-in-out infinite alternate;
+  }
+
+  @keyframes logoFloat {
+    0% { transform: rotateX(0deg) rotateY(0deg) translateY(0); }
+    100% { transform: rotateX(8deg) rotateY(10deg) translateY(-4px); }
+  }
+
+  nav a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+  }
+
+  nav a:hover {
+    color: #4cd137;
+  }
+
+  main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    position: relative;
+    z-index: 10;
+  }
+
+  .product-card {
+    background: #222;
+    border-radius: 16px;
+    box-shadow: 0 0 30px rgba(76, 209, 55, 0.4);
+    max-width: 350px;
+    padding: 30px;
+    text-align: center;
+  }
+
+  .product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 40px rgba(76, 209, 55, 0.7);
+  }
+
+  .product-card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+
+  .product-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #4cd137;
+  }
+
+  .product-desc {
+    font-weight: 300;
+    font-size: 1rem;
+    color: #aaa;
+    margin-bottom: 25px;
+  }
+
+  .price {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    color: #fff;
+  }
+
+  .buy-button {
+    background: #4cd137;
+    border: none;
+    color: #121212;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 14px 40px;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .buy-button:hover {
+    background: #3bb029;
+  }
+
+  footer {
+    text-align: center;
+    padding: 15px;
+    color: #555;
+    font-size: 0.9rem;
+    background: #181818;
+  }
+
+  @media (max-width: 480px) {
+    main {
+      padding: 30px 10px;
+    }
+    .product-card {
+      max-width: 100%;
+      padding: 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="bubble bubble1" aria-hidden="true"></div>
+<div class="bubble bubble2" aria-hidden="true"></div>
+<div class="bubble bubble3" aria-hidden="true"></div>
+
+<div class="rotating-logos-container">
+  <div class="rotating-logo"><svg viewBox="0 0 64 64"><polygon fill="#4cd137" stroke="#1b5e20" stroke-width="2" points="32,4 60,18 60,46 32,60 4,46 4,18" /></svg></div>
+  <div class="rotating-logo"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="#4cd137" stroke="#1b5e20" stroke-width="3"/></svg></div>
+  <div class="rotating-logo"><svg viewBox="0 0 64 64"><polygon fill="#4cd137" stroke="#1b5e20" stroke-width="3" points="32,4 60,60 4,60" /></svg></div>
+</div>
+
+<header>
+  <div class="logo-text">NOXYS VENDORS</div>
+  <nav>
+    <a href="#">Projects</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="product-card">
+    <img src="https://i.ibb.co/pB4WRJPz/1-500x500.jpg" alt="AirPods Pro 2" />
+    <div class="product-title">AirPods Pro 2</div>
+    <div class="product-desc">Experience premium sound quality and active noise cancellation with the latest AirPods Pro 2.</div>
+    <div class="price">€9.99</div>
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+      <input type="hidden" name="cmd" value="_xclick" />
+      <input type="hidden" name="business" value="molnarovalilly@gmail.com" />
+      <input type="hidden" name="item_name" value="AirPods Pro 2 by Lilly Molnarova" />
+      <input type="hidden" name="amount" value="9.99" />
+      <input type="hidden" name="currency_code" value="EUR" />
+      <input type="submit" class="buy-button" value="Buy with PayPal" />
+    </form>
+  </div>
+</main>
+
+<footer>© 2025 Noxys Vendors. All rights reserved.</footer>
+
+</body>
+</html>
